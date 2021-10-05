@@ -1,18 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Platform one.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Platform2_Watch.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1134.14, 16.2742 )
 
 [node name="Level one" type="Node2D"]
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 622.49, 739.215 )
+shape = SubResource( 1 )
+
+[node name="Platform2_Watch" parent="." instance=ExtResource( 2 )]
+position = Vector2( 157.627, 481.376 )
+
+[node name="Platform2_Watch2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 275.611, 441.733 )
+
+[node name="Platform2_Watch3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 463.442, 487.983 )
+
 [node name="AnimatedSprite" parent="." instance=ExtResource( 1 )]
-position = Vector2( 271.978, 272.957 )
+position = Vector2( 119.07, 242.753 )
 
-[node name="Platform one" parent="." instance=ExtResource( 2 )]
-position = Vector2( 270.25, 417.273 )
-
-[node name="Platform one2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 356.68, 371.252 )
-
-[node name="Platform one3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 491.375, 413.906 )
+[connection signal="body_entered" from="Area2D" to="AnimatedSprite" method="_on_Area2D_body_entered"]

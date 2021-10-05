@@ -39,16 +39,18 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 353.412
-height = 2020.52
+radius = 26.0276
+height = 129.427
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 4.39476, 2.63541 )
+scale = Vector2( 0.0553203, 0.0687654 )
 frames = SubResource( 1 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -59.9321, 233.736 )
+position = Vector2( -0.0276489, 18.741 )
 shape = SubResource( 2 )

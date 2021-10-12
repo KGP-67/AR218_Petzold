@@ -8,7 +8,7 @@
 [ext_resource path="res://Player Sprits/leg up right.png" type="Texture" id=6]
 [ext_resource path="res://Player Sprits/Right leg walking.png" type="Texture" id=7]
 [ext_resource path="res://Player Sprits/Left leg up.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/Player.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Enemy.gd" type="Script" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -42,16 +42,27 @@ animations = [ {
 radius = 13.3006
 height = 143.61
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 9 )
+speed = null
+direction = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.0862745, 0.00392157, 0.00392157, 1 )
 position = Vector2( 4.39476, 2.63541 )
 scale = Vector2( 0.0553203, 0.0687654 )
 frames = SubResource( 1 )
 animation = "idle"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.0276489, 18.741 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground_check" type="RayCast2D" parent="."]
+position = Vector2( 44.1724, 50.9546 )
+enabled = true

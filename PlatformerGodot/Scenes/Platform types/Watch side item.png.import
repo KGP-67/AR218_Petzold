@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pencil 256 item.png-c24be310d6ff6ad288bae602a1789ad3.stex"
+path="res://.import/Watch side item.png-158fb9cc89f3c4602c537672cd08511a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Platform types/Pencil 256 item.png"
-dest_files=[ "res://.import/Pencil 256 item.png-c24be310d6ff6ad288bae602a1789ad3.stex" ]
+source_file="res://Scenes/Platform types/Watch side item.png"
+dest_files=[ "res://.import/Watch side item.png-158fb9cc89f3c4602c537672cd08511a.stex" ]
 
 [params]
 

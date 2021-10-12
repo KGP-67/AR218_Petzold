@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Thor's hamer item.png-1447748cfe4e7998e88bd83b25567a86.stex"
+path="res://.import/Background tile shirt.png-b8c4376642b958158ba6e70fbe7b018a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Platform types/Thor's hamer item.png"
-dest_files=[ "res://.import/Thor's hamer item.png-1447748cfe4e7998e88bd83b25567a86.stex" ]
+source_file="res://BackgroundSprites/Background tile shirt.png"
+dest_files=[ "res://.import/Background tile shirt.png-b8c4376642b958158ba6e70fbe7b018a.stex" ]
 
 [params]
 

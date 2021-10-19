@@ -22,11 +22,6 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "air",
@@ -35,6 +30,11 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 } ]
 
@@ -46,7 +46,6 @@ height = 143.61
 script = ExtResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.0862745, 0.00392157, 0.00392157, 1 )
 position = Vector2( 4.39476, 2.63541 )
 scale = Vector2( 0.0553203, 0.0687654 )
 frames = SubResource( 1 )

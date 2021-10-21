@@ -20,6 +20,7 @@ func _physics_process(delta):
 	#show with "pressed"
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += jump
+		$JumpSound.play()
 		
 	if not is_on_floor():
 		$AnimatedSprite.play("air")
@@ -33,3 +34,5 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body): 
 	get_tree().change_scene("res://Scenes/Level one.tscn")
 	pass # Replace with function body.
+	
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Platform types/Pencil 256 item.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Menu sound_01.ogg" type="AudioStream" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -92,5 +93,9 @@ text = "Instructions"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Menu sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]

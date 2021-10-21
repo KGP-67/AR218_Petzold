@@ -27,7 +27,7 @@ func _process(delta):
 		
 		
 		
-		if not $ground_checker.is_colliding and is_on_floor():
+		if not $Ground_check.is_colliding() and is_on_floor():
 			
 			flip_enemy()
 	velocity.y += GRAVITY

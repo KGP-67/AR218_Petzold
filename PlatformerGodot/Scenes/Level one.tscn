@@ -97,12 +97,18 @@ position = Vector2( 588.336, 481.497 )
 
 [node name="Platform2_Watch3" parent="Platform1" instance=ExtResource( 2 )]
 position = Vector2( 602.579, 669.932 )
+collision_layer = 2
+collision_mask = 17
 
 [node name="Platform2_Watch2" parent="Platform1" instance=ExtResource( 2 )]
 position = Vector2( 432.586, 712.872 )
+collision_layer = 2
+collision_mask = 17
 
 [node name="Platform2_Watch" parent="Platform1" instance=ExtResource( 2 )]
 position = Vector2( 257.52, 670.46 )
+collision_layer = 2
+collision_mask = 17
 
 [node name="Collectibles" type="Node2D" parent="."]
 

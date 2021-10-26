@@ -17,14 +17,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "air",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ) ],
@@ -67,14 +67,16 @@ __meta__ = {
 }
 
 [node name="Ground_check" type="RayCast2D" parent="."]
-position = Vector2( 58.8556, 74.648 )
+position = Vector2( 20.215, 74.648 )
 enabled = true
+cast_to = Vector2( 0, 100 )
+collision_mask = 3
 
 [node name="player_checker" type="Area2D" parent="."]
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_checker"]
-position = Vector2( 5.32062, 18.9175 )
+position = Vector2( 3.943, 18.917 )
 shape = SubResource( 3 )
 
 [node name="Fade_Timer" type="Timer" parent="."]

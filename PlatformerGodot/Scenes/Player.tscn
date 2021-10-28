@@ -23,11 +23,6 @@ animations = [ {
 "name": "air",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "walk",
@@ -37,6 +32,11 @@ animations = [ {
 "loop": true,
 "name": "crouch",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -44,6 +44,7 @@ radius = 13.3006
 height = 143.61
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 31
 script = ExtResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

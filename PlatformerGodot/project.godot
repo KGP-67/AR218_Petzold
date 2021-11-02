@@ -10,7 +10,8 @@ config_version=4
 
 [application]
 
-config/name="Platformer Godot"
+config/name="Laptop Nightmare"
+run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -21,6 +22,10 @@ Global="*res://Global.gd"
 
 window/size/width=1280
 window/size/height=720
+
+[global]
+
+"physics layers"=false
 
 [input]
 
@@ -57,6 +62,7 @@ climb={
 2d_physics/layer_3="fallzone"
 2d_physics/layer_4="item"
 2d_physics/layer_5="enemy"
+2d_physics/layer_6="Goal"
 
 [physics]
 

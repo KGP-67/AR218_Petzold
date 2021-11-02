@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Platform types/Pencil 256 item.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Winner Menu.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Menu sound_01.ogg" type="AudioStream" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+
+[node name="Winner_Menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.545098, 0.239216, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = -2.24493
+margin_top = 34.7963
+margin_right = 1277.76
+margin_bottom = 84.7963
+text = "Laptop Nightmare"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title2" type="Label" parent="."]
+margin_left = -2.24493
+margin_top = 406.473
+margin_right = 1277.76
+margin_bottom = 456.473
+text = "You have Won"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 502.863
+margin_top = 163.879
+margin_right = 758.863
+margin_bottom = 419.879
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reload Game" type="Button" parent="."]
+margin_left = 456.054
+margin_top = 523.718
+margin_right = 580.054
+margin_bottom = 543.718
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Restart Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 693.291
+margin_top = 527.268
+margin_right = 782.291
+margin_bottom = 547.268
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="pressed" from="Reload Game" to="." method="_on_Reload_Game_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]

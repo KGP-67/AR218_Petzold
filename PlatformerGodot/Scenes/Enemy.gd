@@ -46,7 +46,7 @@ func _on_player_checker_body_entered(body):
 	if body.name == "Player":
 		body.energy = body.energy -1
 		print(body.energy)
-		if body.energy <= 0:
+		if body.energy <= -1:
 			# warning-ignore:return_value_discarded
 			get_tree().change_scene ("res://Scenes/Level1.tscn")
 			$Fade_Timer.start()
@@ -63,4 +63,6 @@ func _on_player_checker_body_entered(body):
 func _on_Fade_Timer_timeout():
 	
 	queue_free()
-	pass # Replace with function body.
+	
+	
+

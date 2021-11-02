@@ -9,7 +9,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_Collectable_body_entered(body):
-	Global.score = Global.score + 20
+	Global.score = Global.score + 10
 	emit_signal ("coin_collected")
 	queue_free()
 

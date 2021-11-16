@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Pink face.tres" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="CapsuleMesh" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+material = ExtResource( 1 )
+
+[node name="Sheep" type="Spatial"]
+
+[node name="Body" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.52364, 2, 2, 2 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Leg 2" type="MeshInstance" parent="Body"]
+transform = Transform( 0.234713, 0, 0, 0, 0.492441, 0, 0, 0, 0.142811, 0.551419, -1.46406, 0.212551 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="Head" type="MeshInstance" parent="Body"]
+transform = Transform( 0.613736, 0, 0, 0, 0.697038, 0, 0, 0, 0.562857, -0.0311322, 0.178913, 0.877395 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Face" type="MeshInstance" parent="Body"]
+transform = Transform( 0.410329, 0, 0, 0, 0.30796, 0, 0, 0, -0.473712, -0.0281439, -0.224662, 0.932445 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Leg 1" type="MeshInstance" parent="Body"]
+transform = Transform( 0.234713, 0, 0, 0, 0.492441, 0, 0, 0, 0.142811, -0.576669, -1.46406, 0.212551 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg 3" type="MeshInstance" parent="Body"]
+transform = Transform( 0.234713, 0, 0, 0, 0.492441, 0, 0, 0, 0.142811, 0.551419, -1.46406, -0.704767 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg 4" type="MeshInstance" parent="Body"]
+transform = Transform( 0.234713, 0, 0, 0, 0.492441, 0, 0, 0, 0.142811, -0.526131, -1.46406, -0.704767 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )

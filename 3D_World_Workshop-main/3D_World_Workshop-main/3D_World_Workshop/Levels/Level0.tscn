@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,8 @@ material = ExtResource( 3 )
 [sub_resource type="CubeMesh" id=5]
 
 [sub_resource type="CapsuleMesh" id=6]
+
+[sub_resource type="CubeMesh" id=7]
 
 [node name="Level0" type="Spatial"]
 
@@ -73,4 +75,24 @@ material/0 = null
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.28674, 6.39492 )
 mesh = SubResource( 6 )
+material/0 = null
+
+[node name="Wall" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 15.9106, 0, 0, 0, 49.2441, 48.9294, 15.7594, 1.4187 )
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="Wall2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 15.9106, 0, 0, 0, 49.2441, -49.5131, 15.7594, 0.334229 )
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="Wall3" type="MeshInstance" parent="."]
+transform = Transform( -0.000890102, 0, -49.2441, 0, 15.9106, 0, 1, 0, -0.0438324, 0.0542908, 15.7594, 49.1327 )
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="Wall4" type="MeshInstance" parent="."]
+transform = Transform( -0.000890102, 0, -49.2441, 0, 15.9106, 0, 1, 0, -0.0438324, 0.0542908, 15.7594, -49.0796 )
+mesh = SubResource( 7 )
 material/0 = null

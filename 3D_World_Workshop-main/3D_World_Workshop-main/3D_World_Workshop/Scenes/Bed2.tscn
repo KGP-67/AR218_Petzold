@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="CubeMesh" id=5]
+
+[node name="Bed" type="Node"]
+
+[node name="Bed" type="MeshInstance" parent="."]
+transform = Transform( -0.0254386, 0, 3.46136, 0, 1, 0, -6.8751, 0, -0.0128074, -13.1128, 3.19316, 6.56791 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Legs1" type="MeshInstance" parent="."]
+transform = Transform( 0.433832, 0, 0, 0, 1.28408, 0, 0, 0, 0.486025, -10.0904, 1.00907, 0.15632 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Legs2" type="MeshInstance" parent="."]
+transform = Transform( 0.433832, 0, 0, 0, 1.28408, 0, 0, 0, 0.486025, -10.0904, 1.00907, 13.0242 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Legs3" type="MeshInstance" parent="."]
+transform = Transform( 0.433832, 0, 0, 0, 1.28408, 0, 0, 0, 0.486025, -16.1067, 1.00907, 12.9331 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Legs4" type="MeshInstance" parent="."]
+transform = Transform( 0.433832, 0, 0, 0, 1.28408, 0, 0, 0, 0.486025, -16.1787, 1.00907, 0.15632 )
+mesh = SubResource( 5 )
+material/0 = null

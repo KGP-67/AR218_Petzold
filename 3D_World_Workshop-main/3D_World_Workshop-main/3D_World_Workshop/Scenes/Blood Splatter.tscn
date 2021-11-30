@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[sub_resource type="Environment" id=1]
-
-[node name="MeshInstance" type="MeshInstance"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )

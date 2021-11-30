@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Bed.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -6,17 +6,74 @@
 [ext_resource path="res://Scenes/Bed2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Walls.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Window Wall.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Blood Splatter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Swinging Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Lamp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://PanoramicPhotos/ESO_-_Milky_Way.jpeg" type="Texture" id=9]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
 
 [sub_resource type="BoxShape" id=2]
 
-[sub_resource type="ProceduralSky" id=8]
+[sub_resource type="PanoramaSky" id=6]
+panorama = ExtResource( 9 )
 
 [sub_resource type="Environment" id=7]
-background_sky = SubResource( 8 )
+background_mode = 2
+background_sky = SubResource( 6 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "See Through"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 88.34, 0 ), Vector3( 0, 179.029, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 16.1367, 8.71725, 18.2081 ), Vector3( 20.8432, 8.71725, 14.2376 ) ]
+}
+
+[sub_resource type="CapsuleMesh" id=8]
+
+[sub_resource type="CapsuleMesh" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+albedo_color = Color( 0.596078, 0.219608, 0.219608, 1 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "Blood Drip"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -9.58038, 4.09551, 1.33311 ), Vector3( -9.58, 4, 1.333 ), Vector3( -9.58, 2, 1.333 ), Vector3( -9.58, 1, 1.333 ), Vector3( -9.58, 0, 1.333 ) ]
+}
 
 [node name="Level0" type="Spatial"]
 
@@ -43,14 +100,6 @@ shadow_enabled = true
 [node name="FirstPersonPlayer" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0 )
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 0.633975, 0, -0.773354, 0, 1, 0, 0.773354, 0, 0.633975, 13.8868, 22.4276, -1.21622 )
-light_energy = 0.84
-light_bake_mode = 0
-shadow_enabled = true
-shadow_color = Color( 0.419608, 0, 0, 1 )
-omni_range = 62.597
-
 [node name="Walls" parent="." instance=ExtResource( 5 )]
 
 [node name="Bed" parent="." instance=ExtResource( 4 )]
@@ -59,4 +108,133 @@ omni_range = 62.597
 
 [node name="Window Walls" parent="." instance=ExtResource( 6 )]
 
-[node name="MeshInstance" parent="." instance=ExtResource( 7 )]
+[node name="Swinging Door" type="Node" parent="."]
+
+[node name="Door" parent="Swinging Door" instance=ExtResource( 7 )]
+transform = Transform( -4.32375, 0, 0.523244, 0, 8.87882, 0, -2.6548, 0, -0.852183, 19.2562, 8.71725, 15.5764 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Swinging Door/Door"]
+autoplay = "See Through"
+"anims/See Through" = SubResource( 5 )
+
+[node name="Lamp" parent="." instance=ExtResource( 8 )]
+
+[node name="Curtain" type="Node" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.312258, 10.1419, -15.1717 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.070528, 10.1419, -15.1717 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.00173235, 9.34994, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.228655, 8.65225, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, 0.118242, 6.58902, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.303656, 6.58902, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.489571, 6.58902, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.29549, 7.66452, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Curtain"]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.29549, 5.53286, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Curtain2" type="Node" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.6293, 10.1419, -15.1717 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.3876, 10.1419, -15.1717 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.3188, 9.34994, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.5457, 8.65225, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.1988, 6.58902, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.6207, 6.58902, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, -14.8275, 6.58902, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, -15.0216, 7.66452, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Curtain2"]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, -15.0216, 5.53286, -15.0687 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Sludge" type="Node" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Sludge"]
+transform = Transform( 0.752847, 0, 0, 0, 0.109634, 0, 0, 0, 0.323514, -10.548, 4.18215, 1.33311 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Sludge"]
+transform = Transform( 0.10374, 0, 0, 0, 0.100068, 0, 0, 0, 0.18372, -9.76303, 4.18215, 1.33311 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Sludge"]
+transform = Transform( 0.10374, 0, 0, 0, 0.100068, 0, 0, 0, 0.0942741, -9.58011, 4.02855, 1.33303 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sludge/MeshInstance4"]
+autoplay = "Blood Drip"
+"anims/Blood Drip" = SubResource( 11 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Sludge"]
+transform = Transform( 0.953117, 0, 0, 0, 0.109634, 0, 0, 0, 0.546197, -8.93192, 0.0961633, 1.33311 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )

@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Audio/Water drip_01.ogg" type="AudioStream" id=1]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 0.596078, 0.219608, 0.219608, 1 )
+
+[sub_resource type="Animation" id=3]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -9.58038, 4.09551, 1.33311 ), Vector3( -9.58, 4, 1.333 ), Vector3( -9.58, 2, 1.333 ), Vector3( -9.58, 1, 1.333 ), Vector3( -9.58, 0, 1.333 ) ]
+}
+
+[node name="Blood" type="Node"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.752847, 0, 0, 0, 0.109634, 0, 0, 0, 0.323514, -10.548, 4.18215, 1.33311 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 0.10374, 0, 0, 0, 0.100068, 0, 0, 0, 0.18372, -9.76303, 4.18215, 1.33311 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 0.10374, 0, 0, 0, 0.100068, 0, 0, 0, 0.0942741, -9.58011, 4.02855, 1.33303 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshInstance4"]
+autoplay = "Blood Drip"
+"anims/Blood Drip" = SubResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.953117, 0, 0, 0, 0.109634, 0, 0, 0, 0.546197, -8.93192, 0.0961633, 1.33311 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 0.953117, 0, 0, 0, 0.109634, 0, 0, 0, 0.546197, 4.24237, 0.0961633, 4.95035 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( 2.01429, 0, 0, 0, 0.109634, 0, 0, 0, 1.18601, 9.50403, 0.0961633, 12.2671 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( -1.0151, 0, 0, 0, 0.109634, 0, 0, 0, 0.524416, -2.13545, 0.0961633, 19.0679 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true

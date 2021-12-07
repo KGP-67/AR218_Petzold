@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Bed.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://PanoramicPhotos/ESO_-_Milky_Way.jpeg" type="Texture" id=9]
 [ext_resource path="res://Scenes/Blood.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Audio/Fan_01.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/Curtain.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Curtain2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Hallway.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Space Rub.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
@@ -19,18 +23,22 @@ material = ExtResource( 3 )
 
 [sub_resource type="PlaneMesh" id=3]
 
-[sub_resource type="PanoramaSky" id=4]
+[sub_resource type="PanoramaSky" id=8]
 panorama = ExtResource( 9 )
 
 [sub_resource type="Environment" id=5]
 background_mode = 2
-background_sky = SubResource( 4 )
+background_sky = SubResource( 8 )
 
-[sub_resource type="CapsuleMesh" id=6]
+[sub_resource type="SphereMesh" id=6]
 
-[sub_resource type="PlaneMesh" id=7]
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.596078, 0.219608, 0.219608, 1 )
 
-[node name="Level0" type="Spatial"]
+[node name="Room One" type="Spatial"]
+
+[node name="Fan" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( -18.7327, 0, 0, 0, 0.5, 0, 0, 0, -18.4073, 0, -0.508487, 0 )
@@ -93,128 +101,32 @@ transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0 )
 
 [node name="Lamp" parent="." instance=ExtResource( 8 )]
 
-[node name="Curtain" type="Node" parent="."]
+[node name="Curtain" parent="." instance=ExtResource( 12 )]
 
-[node name="MeshInstance" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.312258, 10.1419, -15.1717 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance6" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.070528, 10.1419, -15.1717 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.00173235, 9.34994, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance3" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.228655, 8.65225, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance4" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, 0.118242, 6.58902, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance5" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.303656, 6.58902, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance7" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.489571, 6.58902, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance8" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.29549, 7.66452, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance9" type="MeshInstance" parent="Curtain"]
-transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.29549, 5.53286, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="Curtain2" type="Node" parent="."]
-
-[node name="MeshInstance" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.6293, 10.1419, -15.1717 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance6" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.3876, 10.1419, -15.1717 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.3188, 9.34994, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance3" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.5457, 8.65225, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance4" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.1988, 6.58902, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance5" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -15.6207, 6.58902, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance7" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, -14.8275, 6.58902, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance8" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, -15.0216, 7.66452, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
-
-[node name="MeshInstance9" type="MeshInstance" parent="Curtain2"]
-transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, -15.0216, 5.53286, -15.0687 )
-mesh = SubResource( 6 )
-material/0 = null
+[node name="Curtain2" parent="." instance=ExtResource( 13 )]
 
 [node name="Blood" parent="." instance=ExtResource( 10 )]
 
-[node name="Hallway" type="Node" parent="."]
+[node name="Blood on wall" type="MeshInstance" parent="Blood"]
+transform = Transform( 0.0213547, 0, 0, 0, 0.632095, 0, 0, 0, 0.65075, -15.8196, 4.53999, 5.82878 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
 
-[node name="Hall wall right" type="MeshInstance" parent="Hallway"]
-transform = Transform( -5.12087e-14, 1.29588e-07, 42.4533, -14.2675, -6.89857e-08, 0, -3.95165e-07, 1, -6.25943e-07, -59.2271, 14.32, 13.1287 )
-mesh = SubResource( 7 )
-material/0 = null
+[node name="Blood on wall2" type="MeshInstance" parent="Blood"]
+transform = Transform( 0.0213547, 0, 0, 0, 0.632095, 0, 0, 0, 0.65075, -15.8196, 4.9976, 5.47474 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
 
-[node name="Hall wall right2" type="MeshInstance" parent="Hallway"]
-transform = Transform( -5.12087e-14, 1.29588e-07, 42.4533, -14.2675, -6.89857e-08, 0, -3.95165e-07, 1, -6.25943e-07, 58.7033, 14.32, 13.1287 )
-mesh = SubResource( 7 )
-material/0 = null
+[node name="Blood on wall3" type="MeshInstance" parent="Blood"]
+transform = Transform( 1.21471, 0, 0, 0, 0.332218, 0, 0, 0, 1.09835, -13.3627, 4.0679, 8.40844 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
 
-[node name="Hall wall right4" type="MeshInstance" parent="Hallway"]
-transform = Transform( 3.95165e-07, -1, -1.22975e-06, -14.2675, -6.89857e-08, 0, -3.39355e-14, 8.5877e-08, 42.4533, 100.621, 14.32, 21.2849 )
-mesh = SubResource( 7 )
-material/0 = null
+[node name="Blood on wall4" type="MeshInstance" parent="Blood"]
+transform = Transform( 1.21471, 0, 0, 0, 0.332218, 0, 0, 0, 1.09835, -13.0886, 4.0679, 7.77453 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
 
-[node name="Hall wall right5" type="MeshInstance" parent="Hallway"]
-transform = Transform( -3.95165e-07, 1, -2.48164e-06, -14.2675, -6.89857e-08, 0, 6.84819e-14, -1.733e-07, -42.4533, -100.585, 14.32, 21.2849 )
-mesh = SubResource( 7 )
-material/0 = null
+[node name="Hallway" parent="." instance=ExtResource( 14 )]
 
-[node name="Hall wall right3" type="MeshInstance" parent="Hallway"]
-transform = Transform( -1.23138e-13, 3.11612e-07, 102.085, 14.2675, 1.56408e-07, -5.47217e-14, 1.64247e-06, -1, 6.25943e-07, -0.422264, 14.32, 38.522 )
-mesh = SubResource( 7 )
-material/0 = null
-
-[node name="Fan" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+[node name="Space Rub" parent="." instance=ExtResource( 15 )]

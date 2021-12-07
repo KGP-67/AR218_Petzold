@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[node name="Curtain" type="Node"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.312258, 10.1419, -15.1717 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.070528, 10.1419, -15.1717 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.00173235, 9.34994, -15.0687 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.228655, 8.65225, -15.0687 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, 0.118242, 6.58902, -15.0687 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 0.206395, 0, 0, 0, 0.398941, -0.916977, 0, 0.256862, 0.111751, -0.303656, 6.58902, -15.0687 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.489571, 6.58902, -15.0687 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.29549, 7.66452, -15.0687 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="."]
+transform = Transform( 0.20118, -0.0586548, 0.19766, 0.0420617, 0.395304, -0.895478, -0.0188711, 0.255787, 0.111283, 0.29549, 5.53286, -15.0687 )
+mesh = SubResource( 1 )
+material/0 = null

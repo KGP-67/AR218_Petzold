@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[node name="Hallway" type="Node"]
+
+[node name="Hall wall right" type="MeshInstance" parent="."]
+transform = Transform( -5.12087e-14, 1.29588e-07, 42.4533, -14.2675, -6.89857e-08, 0, -3.95165e-07, 1, -6.25943e-07, -59.2271, 14.32, 13.1287 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Hall wall right2" type="MeshInstance" parent="."]
+transform = Transform( -5.12087e-14, 1.29588e-07, 42.4533, -14.2675, -6.89857e-08, 0, -3.95165e-07, 1, -6.25943e-07, 58.7033, 14.32, 13.1287 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Hall wall right4" type="MeshInstance" parent="."]
+transform = Transform( 3.95165e-07, -1, -1.22975e-06, -14.2675, -6.89857e-08, 0, -3.39355e-14, 8.5877e-08, 42.4533, 100.621, 14.32, 21.2849 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Hall wall right5" type="MeshInstance" parent="."]
+transform = Transform( -3.95165e-07, 1, -2.48164e-06, -14.2675, -6.89857e-08, 0, 6.84819e-14, -1.733e-07, -42.4533, -100.585, 14.32, 21.2849 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Hall wall right3" type="MeshInstance" parent="."]
+transform = Transform( -1.23138e-13, 3.11612e-07, 102.085, 14.2675, 1.56408e-07, -5.47217e-14, 1.64247e-06, -1, 6.25943e-07, -0.422264, 14.32, 38.522 )
+mesh = SubResource( 1 )
+material/0 = null

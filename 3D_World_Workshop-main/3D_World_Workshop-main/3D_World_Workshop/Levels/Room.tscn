@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Bed.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Walls.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Window Wall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Swinging Door.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Lamp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/3D Scan.tscn" type="PackedScene" id=8]
 [ext_resource path="res://PanoramicPhotos/ESO_-_Milky_Way.jpeg" type="Texture" id=9]
 [ext_resource path="res://Scenes/Blood.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Audio/Fan_01.ogg" type="AudioStream" id=11]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/Curtain2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Hallway.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Space Rub.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Red Hallway Lamps.tscn" type="PackedScene" id=16]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
@@ -23,22 +24,52 @@ material = ExtResource( 3 )
 
 [sub_resource type="PlaneMesh" id=3]
 
-[sub_resource type="PanoramaSky" id=8]
+[sub_resource type="PanoramaSky" id=4]
 panorama = ExtResource( 9 )
 
 [sub_resource type="Environment" id=5]
 background_mode = 2
-background_sky = SubResource( 8 )
+background_sky = SubResource( 4 )
 
 [sub_resource type="SphereMesh" id=6]
 
 [sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.596078, 0.219608, 0.219608, 1 )
 
+[sub_resource type="Animation" id=8]
+resource_name = "3D moving"
+length = 7.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spatial:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 83.6995, 5.40886, 23.4358 ), Vector3( 82.6071, 5.40886, 23.4358 ), Vector3( 81.5282, 5.40886, 23.4358 ), Vector3( 79.7794, 5.40886, 23.4358 ), Vector3( 79.382, 5.40886, 23.4358 ), Vector3( 78.7339, 5.40886, 23.4358 ), Vector3( 77.9275, 5.40886, 23.4358 ), Vector3( 76.6202, 5.40886, 23.4358 ), Vector3( 75.4722, 5.40886, 23.4358 ), Vector3( 74.0352, 5.40886, 23.4358 ), Vector3( 73.4406, 5.40886, 23.4358 ), Vector3( 70.1856, 5.40886, 23.4358 ), Vector3( 68.8557, 5.40886, 23.4358 ), Vector3( 66.9031, 5.40886, 23.4358 ), Vector3( 64.3518, 5.40886, 23.4358 ), Vector3( 62.4093, 5.40886, 23.4358 ), Vector3( 60.4973, 5.40886, 23.4358 ), Vector3( 58.0479, 5.40886, 23.4358 ), Vector3( 56.5021, 5.40886, 23.4358 ), Vector3( 54.8908, 5.40886, 23.4358 ), Vector3( 50.2575, 5.40886, 23.4358 ), Vector3( 44.1339, 5.40886, 23.4358 ), Vector3( 40.6253, 5.40886, 23.4358 ), Vector3( 36.5694, 5.40886, 23.4358 ), Vector3( 32.0071, 5.40886, 23.4358 ), Vector3( 28.6965, 5.40886, 23.4358 ), Vector3( 24.18, 5.40886, 23.4358 ), Vector3( 20.6511, 5.40886, 23.4358 ), Vector3( 18.3902, 5.40886, 23.4358 ), Vector3( 16.0842, 5.40886, 23.4358 ), Vector3( 12.8185, 5.40886, 23.4358 ), Vector3( 10.9281, 5.40886, 18.7272 ), Vector3( 11.6347, 5.40886, 14.2137 ), Vector3( 11.0683, 5.40886, 8.90097 ), Vector3( 10.351, 5.40886, 3.58108 ), Vector3( 10.0791, 5.40886, 4.822 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spatial:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.9, 3, 3.1, 3.2, 3.4, 3.5, 3.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -109.832, 0 ), Vector3( 0, -128.69, 0 ), Vector3( 0, -157.391, 0 ), Vector3( 0, -179.177, 0 ), Vector3( 0, -168.403, 0 ), Vector3( 0, -123.058, 0 ), Vector3( 0, -109.025, 0 ) ]
+}
+
 [node name="Room One" type="Spatial"]
 
 [node name="Fan" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+autoplay = true
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( -18.7327, 0, 0, 0, 0.5, 0, 0, 0, -18.4073, 0, -0.508487, 0 )
@@ -56,6 +87,7 @@ shape = SubResource( 2 )
 transform = Transform( -100.949, 0, 0, 0, 0.5, 0, 0, 0, 18.3465, 0, -0.508487, 22.5245 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Hallway Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -99,8 +131,6 @@ transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0 )
 
 [node name="Swinging Door" parent="." instance=ExtResource( 7 )]
 
-[node name="Lamp" parent="." instance=ExtResource( 8 )]
-
 [node name="Curtain" parent="." instance=ExtResource( 12 )]
 
 [node name="Curtain2" parent="." instance=ExtResource( 13 )]
@@ -130,3 +160,17 @@ material/0 = SubResource( 7 )
 [node name="Hallway" parent="." instance=ExtResource( 14 )]
 
 [node name="Space Rub" parent="." instance=ExtResource( 15 )]
+
+[node name="Red Hallway Lamps" parent="." instance=ExtResource( 16 )]
+
+[node name="3D Scans" type="Node" parent="."]
+
+[node name="Spatial" parent="3D Scans" instance=ExtResource( 8 )]
+transform = Transform( -2.22199, 0, -4.7051, 0, 5.44473, 0, 6.28444, 0, -1.66358, 81.7097, 5.40886, 22.9328 )
+
+[node name="Spatial2" parent="3D Scans" instance=ExtResource( 8 )]
+transform = Transform( -3.79543e-07, 0, -4.99054, 0, 5.44473, 0, 6.66569, 0, -1.67464e-07, 85.3138, 5.40886, 27.1059 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3D Scans"]
+autoplay = "3D moving"
+"anims/3D moving" = SubResource( 8 )

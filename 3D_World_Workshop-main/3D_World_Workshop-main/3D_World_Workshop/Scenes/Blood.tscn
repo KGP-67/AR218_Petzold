@@ -26,6 +26,10 @@ tracks/0/keys = {
 
 [node name="Blood" type="Node"]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 0.752847, 0, 0, 0, 0.109634, 0, 0, 0, 0.323514, -10.548, 4.18215, 1.33311 )
 mesh = SubResource( 1 )
@@ -64,7 +68,3 @@ material/0 = SubResource( 2 )
 transform = Transform( -1.0151, 0, 0, 0, 0.109634, 0, 0, 0, 0.524416, -2.13545, 0.0961633, 19.0679 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 1 )
-autoplay = true

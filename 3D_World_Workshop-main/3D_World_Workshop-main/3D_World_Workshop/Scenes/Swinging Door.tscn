@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Audio/Door hinge_01.ogg" type="AudioStream" id=1]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -36,6 +38,10 @@ tracks/1/keys = {
 transform = Transform( 3.70658, 0, 0.682866, 0, 8.87882, 0, -3.46468, 0, 0.730544, 25.9266, 8.71725, 14.0933 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Swinging Door"
